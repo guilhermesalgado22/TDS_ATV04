@@ -1,0 +1,34 @@
+@page
+@model tpte04.RazorPages.Pages.Alunos.Create
+
+<h2>Cadastro de Aluno</h2>
+
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-dange"></div>
+            <input type="hidden" asp-for="AlunoModel.IdAluno"/>
+            <div class="form-group">
+                <label asp-for="AlunoModel.NomeAluno"></label>
+                <input asp-for="AlunoModel.NomeAluno" class="form-control" placeholder="Nome do aluno" required/>
+                <span asp-validation-for="AlunoModel.NomeAluno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlunoModel.Email"></label>
+                <input type="email" asp-for="AlunoModel.Email" class="form-control" placeholder="E-mail" required>
+                <span asp-validation-for="AlunoModel.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlunoModel.DataInscricao"></label>
+                <input asp-for="AlunoModel.DataInscricao" type="date" class="form-control" value="@DateTime.Now">
+                <span asp-validation-for="AlunoModel.DataInscricao" class="text-danger"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Cadastrar"/>
+                <a asp-page="/Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
